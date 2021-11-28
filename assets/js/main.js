@@ -76,14 +76,14 @@ async function handleSubmit(event) {
         setTimeout(() => {
             status.innerHTML = "";
             status.style.display = "none";
-        }, 3000);
+        }, 5000);
     }).catch(error => {
         status.style.display = "block";
         status.innerHTML = "Oops! There was a problem submitting your form";
         setTimeout(() => {
             status.innerHTML = "";
             status.style.display = "none";
-        }, 3000);
+        }, 5000);
     });
 }
 form.addEventListener("submit", handleSubmit)
