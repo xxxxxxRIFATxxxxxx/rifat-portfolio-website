@@ -56,6 +56,37 @@ sr.reveal('.work__img', { interval: 200 });
 /*SCROLL CONTACT*/
 sr.reveal('.contact__input', { interval: 200 });
 
+/*CONTACT FORM SUBMIT*/
+var form = document.getElementById("my-form");
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        status.style.display = "block";
+        status.innerHTML = "Thanks for your submission!";
+        form.reset();
+        setTimeout(() => {
+            status.innerHTML = "";
+            status.style.display = "none";
+        }, 3000);
+    }).catch(error => {
+        status.style.display = "block";
+        status.innerHTML = "Oops! There was a problem submitting your form";
+        setTimeout(() => {
+            status.innerHTML = "";
+            status.style.display = "none";
+        }, 3000);
+    });
+}
+form.addEventListener("submit", handleSubmit)
 
 
 

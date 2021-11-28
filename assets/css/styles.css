@@ -344,6 +344,14 @@ img{
   cursor: pointer;
   margin-left: auto;
 }
+.contact__status{
+  background-color: #4070F4;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+  display: none;
+}
 
 /* ===== FOOTER =====*/
 .footer{
